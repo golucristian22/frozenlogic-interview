@@ -16,6 +16,9 @@ navListDescription.forEach((listItem) => {
 const categoriesDetails = document.querySelectorAll(".category__details");
 categoriesDetails.forEach((category) => {
   category.addEventListener("click", () => {
-    category.classList.toggle("selected");
+    for (let i = 0; i < categoriesDetails.length; i++) {
+      categoriesDetails[i].classList.remove("selected");
+    }
+    category.classList.add("selected");
   });
 });

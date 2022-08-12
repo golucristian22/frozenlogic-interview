@@ -14,8 +14,7 @@ body {
   font-family: "Roboto", sans-serif;
   height: 200vh;
 }
-/* TODO: don't forget to sort properties */
-/* BUG:  */
+
 /* Hamburger Menu */
 .nav__content .hamburger__container {
   margin-left: 1.2rem;
@@ -227,6 +226,7 @@ body {
 
   .nav__list-item {
     cursor: pointer;
+    flex-direction: column;
     justify-content: center;
     margin: 0;
     padding: 16px 0px;
@@ -234,7 +234,6 @@ body {
     text-align: center;
     transition: all 0.4s linear;
     width: 100%;
-    flex-direction: column;
   }
 
   .nav__list-item:hover .nav__list-content {
@@ -269,16 +268,17 @@ body {
   }
 
   .category__details {
-    display: flex;
     align-items: center;
     background-color: #f2f2f2;
-    transition: var(--hb-transition--faster);
     cursor: pointer;
+    display: flex;
+    transition: var(--hb-transition--faster);
   }
 
   .category__icon {
     margin: 0 24px 0 12px;
   }
+
   .category__icon svg path,
   .category__arrow svg path {
     fill: #828282 !important;
@@ -286,8 +286,8 @@ body {
   }
 
   .category__name {
-    font-weight: 400;
     color: #828282;
+    font-weight: 400;
     margin: 17px 0;
     transition: var(--hb-transition--faster);
   }
@@ -333,61 +333,62 @@ body {
 
   /* Category Content */
   .category__content {
-    transition: all 1s ease-out;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
     flex-direction: column;
+    height: 0;
     justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 1s ease-out;
+    visibility: hidden;
   }
 
   .category__details.selected + .category__content {
-    opacity: 1;
     height: auto;
+    opacity: 1;
     visibility: visible;
   }
   .category__content-image {
-    margin: 24px 32px 27px 32px;
-    width: 244px;
+    border-radius: var(--border-radius);
     height: 375px;
+    margin: 24px 32px 27px 32px;
     object-fit: cover;
+    width: 244px;
   }
 
   .category__content-suggestions {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: left;
   }
 
   .suggestions__container {
     display: flex;
     flex-direction: column;
-    width: 152px;
     margin: 0 0 24px 0;
+    width: 152px;
   }
 
   .suggestion__heading {
-    margin: 0 0 8px 12px;
-    font-weight: 600;
-    font-size: 1.6rem;
     color: #000;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 8px 12px;
     width: fit-content;
   }
 
   .line {
-    content: "";
-    width: 100%;
-    height: 1px;
     background-color: #e0e0e0;
+    content: "";
+    height: 1px;
+    width: 100%;
   }
 
   .suggestion {
-    margin: 12px 0 0 12px;
-    font-weight: 300;
-    font-size: 1.2rem;
     color: #000;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 12px 0 0 12px;
     text-decoration: none;
     transition: var(--hb-transition--faster);
   }
@@ -416,14 +417,14 @@ body {
   }
 
   #mega-menu {
-    max-width: 100%;
     background-color: transparent;
+    border-top: 18px solid transparent;
+    box-shadow: 0 0 0 0;
+    max-width: 100%;
+    padding: 0;
     top: 50px;
     transition: all 0.15s ease-out;
     z-index: 1;
-    box-shadow: 0 0 0 0;
-    padding: 0;
-    border-top: 18px solid transparent;
   }
 
   /* Side Menu */
@@ -435,11 +436,11 @@ body {
   }
 
   .categories__container {
+    background-color: white;
+    height: 100%;
+    max-height: 400px;
     max-width: 244px;
     position: relative;
-    max-height: 400px;
-    height: 100%;
-    background-color: white;
   }
 
   .category {
@@ -447,11 +448,11 @@ body {
   }
 
   .category__details {
-    display: flex;
     align-items: center;
     background-color: #f2f2f2;
-    transition: var(--hb-transition--faster);
     cursor: pointer;
+    display: flex;
+    transition: var(--hb-transition--faster);
   }
 
   .category__icon {
@@ -465,8 +466,8 @@ body {
   }
 
   .category__name {
-    font-weight: 400;
     color: #828282;
+    font-weight: 400;
     margin: 17px 0;
     transition: var(--hb-transition--faster);
   }
@@ -511,16 +512,16 @@ body {
 
   /* Category Content */
   .category__content {
-    transition: all 1s ease-out;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
     display: flex;
-    position: absolute;
+    height: 0;
     left: 244px;
-    top: 0;
+    opacity: 0;
+    overflow: hidden;
     padding-right: 12px;
+    position: absolute;
+    top: 0;
+    transition: all 1s ease-out;
+    visibility: hidden;
   }
 
   #movies__content {
@@ -530,55 +531,55 @@ body {
   }
 
   .category__details.selected + .category__content {
-    opacity: 1;
     height: auto;
+    opacity: 1;
     visibility: visible;
   }
 
   .category__content-image {
-    margin: 24px 32px 27px 32px;
-    width: 244px;
+    border-radius: var(--border-radius);
     height: 375px;
+    margin: 24px 32px 27px 32px;
     object-fit: cover;
+    width: 244px;
   }
 
   .category__content-suggestions {
+    column-gap: 32px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 130px);
-    column-gap: 32px;
-    row-gap: 24px;
     margin: 24px 0 0 0;
-    /* max-height: 300px; */
+    row-gap: 24px;
   }
 
   .suggestions__container {
     display: flex;
     flex-direction: column;
-    width: 152px;
     height: fit-content;
+    width: 152px;
   }
 
   .suggestion__heading {
-    margin: 0 0 8px 12px;
-    font-weight: 600;
-    font-size: 1.6rem;
     color: #000;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 8px 12px;
     width: fit-content;
   }
 
   .line {
-    content: "";
-    width: 100%;
-    height: 1px;
     background-color: #e0e0e0;
+    content: "";
+    height: 1px;
+    width: 100%;
   }
 
   .suggestion {
-    margin: 12px 0 0 12px;
-    font-weight: 300;
-    font-size: 1.2rem;
     color: #000;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 12px 0 0 12px;
     text-decoration: none;
     transition: var(--hb-transition--faster);
   }
@@ -596,14 +597,14 @@ body {
 
   .category__next-content {
     display: block;
-    transform: translateY(180px);
-    position: relative;
     height: fit-content;
+    position: relative;
+    transform: translateY(180px);
   }
 
   .next-content__banner {
-    position: absolute;
     bottom: 0;
     left: -45px;
+    position: absolute;
   }
 }
