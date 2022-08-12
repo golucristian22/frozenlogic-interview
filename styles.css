@@ -234,15 +234,12 @@ body {
     text-align: center;
     transition: all 0.4s linear;
     width: 100%;
+    flex-direction: column;
   }
 
   .nav__list-item:hover .nav__list-content {
     max-width: 0;
     visibility: hidden;
-  }
-
-  .nav__list-item {
-    flex-direction: column;
   }
 
   .nav__list-content {
@@ -300,6 +297,7 @@ body {
   }
 
   /* Category Hover */
+  /* Category Hover */
   .category__details:hover {
     background-color: #f2c94c;
   }
@@ -317,17 +315,19 @@ body {
   }
 
   /* Category Selected */
-
-  .category.selected .category__details {
+  .category__details.selected {
     background-color: #f2c94c;
   }
 
-  .category.selected .category__name {
+  .category__details.selected .category__name {
     color: #000;
   }
 
-  .category.selected .category__icon svg path,
-  .category__arrow svg path {
+  .category__details.selected .category__icon svg path {
+    fill: #000 !important;
+  }
+
+  .category__details.selected .category__arrow svg path {
     fill: #000 !important;
   }
 
@@ -402,6 +402,15 @@ body {
 }
 
 @media screen and (min-width: 1055px) {
+  .nav__list-content {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .nav__list-item:hover .nav__list-content {
+    height: auto;
+  }
+
   #mega-menu-item {
     position: static;
   }
@@ -409,9 +418,12 @@ body {
   #mega-menu {
     max-width: 100%;
     background-color: transparent;
-    top: 56px;
+    top: 50px;
     transition: all 0.15s ease-out;
     z-index: 1;
+    box-shadow: 0 0 0 0;
+    padding: 0;
+    border-top: 18px solid transparent;
   }
 
   /* Side Menu */
@@ -431,7 +443,7 @@ body {
   }
 
   .category {
-    cursor: pointer;
+    cursor: default;
   }
 
   .category__details {
@@ -481,17 +493,19 @@ body {
   }
 
   /* Category Selected */
-
-  .category.selected .category__details {
+  .category__details.selected {
     background-color: #f2c94c;
   }
 
-  .category.selected .category__name {
+  .category__details.selected .category__name {
     color: #000;
   }
 
-  .category.selected .category__icon svg path,
-  .category__arrow svg path {
+  .category__details.selected .category__icon svg path {
+    fill: #000 !important;
+  }
+
+  .category__details.selected .category__arrow svg path {
     fill: #000 !important;
   }
 
